@@ -1,0 +1,27 @@
+<div class="box wordwrap" ng-click="toggle($event)" >
+    <img class="info-sign icon-selected" src="assets/icon_check.png" />
+    <div ng-click="openModal($event)" class="sign-icon info-sign">i</div>
+    <img class="item-image" src="{{product.image}}" />
+    <div class="section"><strong style="{{'border: 1px solid #' + section.color+ '; border-radius: 2px; display:inline; background-color: #' + section.bgcolor + '; color: #' + section.color}}">{{product.tag | uppercase}}</strong></div>
+    <div class="item-title wordwrap"> {{product.name}} </div>
+</div>
+<div class="modal" ng-show="showModal">
+    <div class="header">
+        <div class="header-label">Offer Details
+            <div class="close-modal-button" ng-click="showModal = false">X</div>
+        </div>
+        <div style="background:white"><img class="modal-image" src="{{product.image}}" /></div>
+        <div class="item-desc-wrapper">
+            <div class="section" style="display: inline-block; margin-top: 10px;"><strong style="{{'border: 1px solid #' + section.color+ '; border-radius: 2px; display:inline; background-color: #' + section.bgcolor + '; color: #' + section.color}}">{{product.tag | uppercase}}</strong></div>
+            <div class="item-title wordwrap" style="font-size: 22px;"> {{product.name}} </div>
+            <div class="item-title dark-grey"><img src="{{product.logo}}" />
+                <div class="brand"> {{product.brand}}</div>
+            </div>
+            <hr style="margin:20px" />
+            <div class="item-title dark-grey">{{product.description}}</div>
+            <div class="footer">
+                <div ng-click="select($event)" class="selection-button blue" show-modal="showModal">Select Offer</div>
+            </div>
+        </div>
+    </div>
+</div>

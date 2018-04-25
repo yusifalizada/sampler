@@ -1,0 +1,1 @@
+var samplerApp = angular.module('sampler', []);

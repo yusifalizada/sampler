@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+<script src="app.js"></script>
+<script src="samplerCtrl.js"></script>
+<script src="itemDirective.js"></script>
+<link rel="stylesheet" href="styles.css">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GETTING STARTED WITH BRACKETS</title>
+    <meta name="description" content="An interactive getting started guide for Brackets.">
+</head>
+
+<body ng-app="sampler" ng-controller=samplerCtrl>
+    <div>
+        <div class="header">
+            <div class="header-label">BabyFirst</div>
+        </div>
+        <div style="height: 60px; background:#f4f4f4">
+            <div style=display:inline-block><img class="icon" src="assets/icon_check.png" />
+                <div id="profile" class="label">Profile</div>
+            </div>
+            <div class="top-bar green"></div>
+            <div style="display:inline-block">
+                <div class="sign-icon step-sign">2</div>
+                <div id="offers" class="label">Offers</div>
+            </div>
+            <div class="top-bar right-bar"></div>
+            <div style=display:inline-block>
+                <div class="sign-icon step-sign step-3">3</div>
+                <div id="success" class="label">Success</div>
+            </div>
+        </div>
+
+
+        <h2 style="text-align: center;">Pick Your Offers</h2>
+        <div style="width: 100%; background: #fafafa;">  
+            <div class="item-container">
+                <item ng-repeat="product in products" product='product' section="sections[product.tag]">{{item[0]}}</item>
+            </div>
+        </div>
+        
+        <div>
+            <img src="assets/img_publisher_logo.png" class="icon"/>
+        </div>
+        
+        <div ng-show="count>0" class="footer">
+            <div ng-click="submit()" class="selection-button" ng-class="{'ready': count == 5}">
+                <div class="icon-wrapper" ng-if="count==5"><img class="submit-icon" src="assets/icon_check.png" /></div> {{count}} of 5 selected</div>
+        </div>
+    </div>
+</body>
+
+</html>
