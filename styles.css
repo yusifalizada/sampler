@@ -120,7 +120,7 @@ strong {
 	word-break: break-word;
 }
 .item-container {
-	max-width: 1096px;
+	max-width: 1142px;
 	margin: 0 auto;
 }
 @media only screen and (max-width: 1120px) {
